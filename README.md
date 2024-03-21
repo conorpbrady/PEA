@@ -1,0 +1,2 @@
+# PEA
+Personal Event Aggregator

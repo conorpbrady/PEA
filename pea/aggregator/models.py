@@ -20,6 +20,8 @@ class Importer(models.Model):
 
 class XpathImporter(Importer):
 
+    url = models.CharField(max_length = 255)
+    site_name = models.CharField(max_length = 255)
     events_elements_xpath = models.CharField(max_length = 255)
     date_xpath = models.CharField(max_length = 255)
     time_xpath = models.CharField(max_length = 255)

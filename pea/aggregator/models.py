@@ -8,12 +8,11 @@ class EventEntry(models.Model):
     owner = models.ForeignKey(User, models.SET_NULL, blank=True, null=True)
     date = models.DateField()
     time = models.TimeField()
-    location = models.CharField(max_length = 255)
+    location = models.CharField(max_length = 255, blank=True)
     title = models.CharField(max_length = 255)
-    tagline = models.CharField(max_length = 255)
-    link = models.CharField(max_length = 255)
-    cost = models.DecimalField(max_digits = 9, default = 0.00, decimal_places = 2)
-
+    tagline = models.CharField(max_length = 255, blank=True)
+    link = models.CharField(max_length = 255, blank=True)
+    cost = models.CharField(max_length = 255, blank=True)
 
 class Importer(models.Model):
     pass

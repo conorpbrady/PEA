@@ -13,12 +13,18 @@ for xi in XpathImporter.objects.all():
     event_elements = html.fromstring(r.content)
 
     for ee in event_elements:
-        title = ee.xpath(xi.title_xpath)[0].text)
-        date = ee.xpath(xi.date_xpath)[0].text)
-        time = ee.xpath(xi.time_xpath)[0].text)
-        tagline = ee.xpath(xi.tagline_xpath[0].text)
-        link = ee.xpath(xi.link_xpath[0].text)
-        location = ee.xpath(xi.location_xpath[0].text)
+        if xi.title_path:
+            title = ee.xpath(xi.title_xpath)[0].text
+        if xi.date_xpath:
+            date = ee.xpath(xi.date_xpath)[0].text
+        if xi.time.xpath:
+            time = ee.xpath(xi.time_xpath)[0].text
+        if xi.tagline.xpath:
+            tagline = ee.xpath(xi.tagline_xpath)[0].text
+        if xi.link_xpath:
+            link = ee.xpath(xi.link_xpath)[0].text
+        if xi.location_xpath:
+            location = ee.xpath(xi.location_xpath)[0].text
 
 
         formatted_date = datetime.strptime(date, xi.date_format)

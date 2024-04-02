@@ -20,13 +20,18 @@ class Importer(models.Model):
 
 class XpathImporter(Importer):
 
+    # User
+    # Subscribed boolean
+
     url = models.CharField(max_length = 255)
     site_name = models.CharField(max_length = 255)
     events_elements_xpath = models.CharField(max_length = 255)
     date_xpath = models.CharField(max_length = 255)
-    time_xpath = models.CharField(max_length = 255)
-    location_xpath = models.CharField(max_length = 255)
+    time_xpath = models.CharField(max_length = 255, blank=True)
+    location_xpath = models.CharField(max_length = 255, blank=True)
     title_xpath = models.CharField(max_length = 255)
-    tagline_xpath = models.CharField(max_length = 255)
-    link_xpath = models.CharField(max_length = 255)
-    cost_xpath = models.CharField(max_length = 255)
+    tagline_xpath = models.CharField(max_length = 255, blank=True)
+    link_xpath = models.CharField(max_length = 255, blank=True)
+    cost_xpath = models.CharField(max_length = 255, blank=True)
+    date_format = models.CharField(max_length = 32, blank=True)
+    time_format = models.CharField(max_length = 32, blank=True)
